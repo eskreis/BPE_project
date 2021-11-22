@@ -1,58 +1,34 @@
 def Test_on_fly(Partition_pickle_name, Labels_int_binary_pickle_name, image_size1, scalar1, frozen1, extra1, surplus1, save_path1, batch_size1, folder_name):
     
-    import tensorflow as tf
-    from tensorflow import keras
-    import pickle
-    import numpy as np
-
-    from keras.models import Sequential, Model
-    from keras.layers import Dense
-    from keras.layers import Conv2D, Input
-    from keras.layers import Conv2DTranspose
-    from keras.layers import Dropout
-    from keras.layers import MaxPooling2D
-    from keras.layers import Flatten
-    from keras.layers import Dense
-    from keras.layers import Reshape
-    from keras.layers import AveragePooling2D, BatchNormalization
-    from keras import optimizers
-    from keras import regularizers
-    from keras.optimizers import Adam
-    from keras import applications
-    from keras.preprocessing.image import ImageDataGenerator
-    from keras import optimizers
-    from keras.models import Sequential, Model 
-    from keras.layers import Dropout, Flatten, Dense, GlobalAveragePooling2D
-    from keras import backend as k 
-    from keras.callbacks import ModelCheckpoint, LearningRateScheduler, TensorBoard, EarlyStopping
-    from keras.preprocessing.image import ImageDataGenerator
-
-    from tensorflow.python.framework import ops
+    import cv2
     import math
-    import time
-    import random
-    import pandas as pd
-    import os
     import matplotlib
-    from matplotlib import pyplot as plt
-    import cv2
-    from keras.optimizers import Adam
-    from keras import backend as K
-    from vgg16_model import vgg16_model 
-    from keras.optimizers import SGD
-    import scipy.io as sio
-    from keras.models import load_model
-    import time
-    import math
-    import random
-    import pandas as pd
     import matplotlib.pyplot as plt
-    import cv2
+    import numpy as np
     import os
-    from sklearn.metrics import roc_curve
-    from sklearn.metrics import auc
-    from sklearn.metrics import classification_report, confusion_matrix    
+    import pandas as pd
+    import pickle
+    import random
+    import scipy.io as sio
+    import tensorflow as tf
+    import time
     from GetTestData import GenerateTestData
+    from keras import applications, optimizers, regularizers
+    from keras import backend as K  # you should pick if youre doing *K* or *k*
+    from keras import backend as k
+    from keras.callbacks import ModelCheckpoint, LearningRateScheduler, TensorBoard, EarlyStopping
+    from keras.models import AveragePooling2D, BatchNormalization, Conv2D, Input, Dense, \
+        Dropout, Sequential, Model, load_model, Reshape, MaxPooling2D, Flatten, \
+        Dropout, Flatten, Dense, GlobalAveragePooling2D
+    from keras.optimizers import Adam, SGD
+    from keras.preprocessing.image import ImageDataGenerator
+    from matplotlib import pyplot as plt
+    from sklearn.metrics import auc, classification_report, confusion_matrix, roc_curve
+    from tensorflow import keras
+    from tensorflow.python.framework import ops
+    from vgg16_model import vgg16_model
+
+
     
     classes = ['0', '1', '2', '3']
  
